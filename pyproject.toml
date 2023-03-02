@@ -1,0 +1,79 @@
+[build-system]
+requires = [
+    "setuptools>=42",
+    # "pybind11>=2.10.0",  # For C++ binding
+]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "BallsInBins"
+authors = [
+    {name = "Matthew R. Carbone", email = "mcarbone@bnl.gov"}
+]
+maintainers = [
+    {name = "Matthew R. Carbone", email = "mcarbone@bnl.gov"},
+]
+
+description = "A balls-in-bins simulator!"
+readme = "README.md"
+requires-python = ">=3.11"
+license = {file = "LICENSE"}
+classifiers = [
+    "Development Status :: 2 - Pre-Alpha",
+    "Natural Language :: English",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3",
+    "Topic :: Scientific/Engineering",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Education",
+]
+dependencies = [
+    "numpy",
+    "scipy",
+    "monty"
+]
+
+# Dynamic version reads __version__ directly from my_package.__init__
+dynamic = ["version"]
+
+
+[project.optional-dependencies]
+test = [
+    "codecov",
+    "coverage",
+    "flake8",
+    "pytest",
+    "pytest-cov",
+    "black",
+    "nbstripout",
+    "pre-commit",
+]
+doc = [
+    "sphinx",
+    "numpydoc",
+    "sphinx-copybutton",
+    "sphinx_rtd_theme",
+    "ipython",
+]
+
+[tool.setuptools]
+packages = ["balls_in_bins"]
+
+[tool.black]
+line-length = 80
+include = '\.pyi?$'
+exclude = '''
+/(
+  | \.git
+  | \.hg
+  | \.mypy_cache
+  | \.tox
+  | \.venv
+  | _build
+  | buck-out
+  | build
+  | dist
+  | docs/source/conf.py
+)/
+'''
