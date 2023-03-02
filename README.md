@@ -2,9 +2,12 @@
 
 A simple balls-in-bins simulator. The problem considers throwing $N$ balls into $M$ bins, and the various statistical puzzles that embody the problem. Here are a few problems we'll consider here.
 
+**Resources**
+- [Purdue lecture notes](https://www.cs.purdue.edu/homes/hmaji/teaching/Spring%202017/lectures/03.pdf)
+
 ## Number of collisions
 
-[The number of collisions](https://www.cs.purdue.edu/homes/hmaji/teaching/Spring%202017/lectures/03.pdf) (aka the birthday paradox) is a common problem in probability theory.
+The number of collisions (aka the birthday paradox) is a common problem in probability theory.
 
 Let $X_{ij}$ be an indicator variable which is equal to 1 if $i$th and $j$th balls fall into the same bin. Given every throw is independent, we throw ball $i$ and allow it to land somewhere. The probability then that ball $j$ lands in the same bin as $i$ is simply $1/M.$ This can also be framed as the expectation of this random variable:
 
@@ -21,3 +24,4 @@ $$ \mathbb{E}[X] = \mathbb{E}\left[\sum_{1 \leq i < j \leq N} X_{ij}\right] = \s
 with the second equality from linearity of expectation. This sum can be solved analytically,
 
 $$ \mathbb{E}[X] = {N \choose 2} \frac{1}{M}. $$
+
