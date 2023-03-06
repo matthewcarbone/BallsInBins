@@ -3,7 +3,19 @@
 A simple balls-in-bins simulator. The problem considers throwing $N$ balls into $M$ bins, and the various statistical puzzles that embody the problem. Here are a few problems we'll consider here.
 
 **Resources**
-- [Purdue lecture notes](https://www.cs.purdue.edu/homes/hmaji/teaching/Spring%202017/lectures/03.pdf)
+- [Purdue lecture notes on the balls in bins problem](https://www.cs.purdue.edu/homes/hmaji/teaching/Spring%202017/lectures/03.pdf)
+
+## Number of empty bins
+
+After throwing $N$ balls into $M$ bins, one interesting question we can ask is how many bins are empty?
+
+First consider the probability that any single bin is empty after $N$ throws. Given that the probability of any ball landing in any single bin is $1/M,$ the probability of a ball _not_ landing in any single bin is its complement: $1-1/M.$ For a bin to be empty after $N$ throws, this would have to happen $N$ times: $(1-1/M)^N.$ Put more precisely, the indicator variable for whether or not bin $i$ is empty is given by 
+
+$$ E[X_i] = (1-1/M)^N. $$
+
+Let $X$ be the random variable representing the total number of empty bins after $N$ throws. The total expected number of empty bins is just this value, multiplied by the total number of bins:
+
+$$ \mathbb{E}[X] = \sum_{i=1}^M E[X_i] = M (1 - 1/M)^N.$$
 
 ## Number of collisions
 
