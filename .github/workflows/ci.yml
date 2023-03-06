@@ -39,7 +39,7 @@ jobs:
 
     - name: Run tests
       run: |
-        pytest -v --cov --cov-report xml balls_in_bins/_tests
+        pytest -v --cov --cov-report xml _tests
 
   black:
     runs-on: ubuntu-latest
