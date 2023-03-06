@@ -7,10 +7,6 @@ on:
     branches:
       - master
 
-# concurrency:
-#   group: ${{ github.workflow }}-${{ github.ref }}
-#   cancel-in-progress: true
-
 jobs:
 
   build_and_test:
@@ -24,8 +20,6 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-      # with:
-      #   submodules: recursive
 
     - uses: actions/setup-python@v4
       with:
@@ -39,7 +33,7 @@ jobs:
 
     - name: Run tests
       run: |
-        pytest -v --cov --cov-report xml _tests
+        pytest -v --cov --cov-report xml balls_in_bins/_tests
 
   black:
     runs-on: ubuntu-latest
