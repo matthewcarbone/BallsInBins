@@ -39,7 +39,7 @@ def analytic_empty_bins(N, M):
     float
     """
 
-    return M * (1.0 - 1.0 / M) ** N
+    return M * (1.0 - 1.0 / M) ** N * 100
 
 
 class Simulation(MSONable):
