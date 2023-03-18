@@ -12,11 +12,10 @@ jobs:
 
   build_and_test:
     strategy:
-      fail-fast: false
       matrix:
         platform: [ubuntu-latest]
-        python-version: ["3.11"]
-
+        python-version: ["3.9", "3.11"]
+      fail-fast: false
     runs-on: ${{ matrix.platform }}
 
     steps:
