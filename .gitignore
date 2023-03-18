@@ -1,6 +1,7 @@
 # Custom
 .vscode
 *.ipynb
+!debug.ipynb
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
